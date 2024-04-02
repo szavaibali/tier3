@@ -1,0 +1,17 @@
+
+
+<div *ngFor="let question of questions; let i = index">
+  <p>{{ i + 1 }}. {{ question.text }}</p>
+  <input type="range" min="1" max="5" [(ngModel)]="question.score" (input)="updateScore(question, $event)">
+  <span>{{ question.score }}</span>
+</div>
+<p>
+  
+</p>
+<p-button class="save-button" (click)="saveResults()">Mentés</p-button>
+
+
+<div class="result-display">
+  <p>Az eredmény: {{ totalScore }}</p>
+</div>
+

@@ -1,0 +1,27 @@
+<div>
+  <p>Regisztrációk: {{ registrations }}</p>
+  <button (click)="onRefreshClick()" class="p-button p-button-secondary">Adatok frissítése</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Teljes Név</th>
+        <th>Osztály</th>
+        <th>Email</th>
+        <th>Iskola pont</th>
+        <th>Oktatók és pontjaik</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.fullName }}</td>
+        <td>{{ result.fullClass }}</td>
+        <td>{{ result.email }}</td>
+        <td>{{ result.result_tc }}</td>
+        <td>
+          <span *ngFor="let score of result.scores">
+            {{ score.name }}: {{ score.score }}<br>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
